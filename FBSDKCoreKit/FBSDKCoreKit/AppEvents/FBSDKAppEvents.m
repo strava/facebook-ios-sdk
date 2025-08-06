@@ -43,6 +43,9 @@
 
 #endif
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 @protocol FBSDKCAPIReporter;
 
 // Event parameter values internal to this file
@@ -1482,6 +1485,8 @@ static BOOL g_explicitEventsLoggedYet = NO;
                                                                                       flags:FBSDKGraphRequestFlagDoNotInvalidateTokenOnError | FBSDKGraphRequestFlagDisableErrorRecovery];
   return request;
 }
+
+#pragma clang diagnostic pop
 
 #pragma mark - Testability
 
