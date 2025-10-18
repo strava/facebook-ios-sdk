@@ -13,6 +13,9 @@
 #import <mach-o/dyld.h>
 #import <sys/time.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 typedef NS_ENUM(NSUInteger, FBSDKInternalUtilityVersionMask) {
   FBSDKInternalUtilityMajorVersionMask = 0xFFFF0000,
   // FBSDKInternalUtilityMinorVersionMask = 0x0000FF00, // unused
@@ -666,6 +669,8 @@ static NSMapTable *_transientObjects;
   }
   return NO;
 }
+
+#pragma clang diagnostic pop
 
 - (void)validateConfiguration
 {

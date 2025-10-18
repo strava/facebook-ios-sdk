@@ -8,6 +8,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+//#pragma clang diagnostic pop
+
+
 import PackageDescription
 import Foundation
 
@@ -168,7 +173,7 @@ extension Target {
 
         static let core = binaryTarget(
             name: .Prefixed.core,
-            remoteChecksum: "60fb77ce96184325479400afdca9ea798c4d278bcd63e1551b7a938b7f8425e1"
+            path: .Prefixed.core + ".xcframework"
         )
 
         static let login = binaryTarget(
